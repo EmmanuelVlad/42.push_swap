@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:10:23 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 16:48:23 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 19:59:23 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void				stock(t_stack *stack, int ac, char **av);
 */
 
 t_element			*init_element(int value);
-t_stack				*init(char *str);
+t_stack				*init_a(char *str);
+t_stack				*init_b(void);
 
 /*
 ** -------------------------------------------------------------------------- 
@@ -38,8 +39,9 @@ t_stack				*init(char *str);
 ** --------------------------------------------------------------------------
 */
 
+int					check_if_exists(t_element *element, int value);
 void				printexit(char *str);
-void				freexit(t_stack *stack, char *str);
+void				freexit(t_stack *stack, char *str, int first);
 void				freestack(t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:10:07 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 17:15:21 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 20:12:44 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,30 @@
 
 int		push_swap(int ac, char **av)
 {
-	t_stack		*stack;
-	t_element	*tmp;
+	t_stack		*a;
+	t_stack		*b;
+	t_element	*tmp_a;
+	t_element	*tmp_b;
 
-	stack = init(av[1]);
-	stock(stack, ac, av);
-	tmp = stack->first;
-	while (tmp->next)
+	a = init_a(av[1]);
+	b = init_b();
+	stock(a, ac, av);
+	pb(a, b);
+	tmp_a = a->first;
+	tmp_b = b->first;
+	ft_printf("Stack A:\n");
+	while (tmp_a)
 	{
-		ft_printf("%d\n", tmp->value);
-		tmp = tmp->next;
+		ft_printf("%d\n", tmp_a->value);
+		tmp_a = tmp_a->next;
 	}
-	freestack(stack);
+	ft_printf("Stack B:\n");
+	while (tmp_b)
+	{
+		ft_printf("%d\n", tmp_b->value);
+		tmp_b = tmp_b->next;
+	}
+	freestack(a);
 	return (1);
 }
 

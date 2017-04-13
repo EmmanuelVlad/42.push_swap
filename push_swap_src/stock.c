@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 15:36:17 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 16:43:34 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 20:25:11 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void		add_elem(t_stack *stack, int value)
 {
-	t_element *new;
+	t_element	*new;
+	t_element	*tmp;
 
 	new = init_element(value);
 	new->next = stack->first;
@@ -28,7 +29,7 @@ void		stock(t_stack *stack, int ac, char **av)
 	i = ac - 1;
 	while (i > 0)
 	{
-		freexit(stack, av[i]);
+		freexit(stack, av[i], 0);
 		add_elem(stack, ft_atoi(av[i]));
 		i--;
 	}

@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 14:47:35 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 17:09:16 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 20:04:41 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_element			*init_element(int value)
 	return (element);
 }
 
-t_stack				*init(char *str)
+t_stack				*init_a(char *str)
 {
 	t_stack		*stack;
 	t_element	*element;
@@ -32,9 +32,19 @@ t_stack				*init(char *str)
 		exit(EXIT_FAILURE);
 	if (!(stack = (t_stack*)malloc(sizeof(t_stack))))
 		exit(EXIT_FAILURE);
-	freexit(stack, str);
+	freexit(stack, str, 1);
 	element->value = ft_atoi(str);
 	element->next = NULL;
 	stack->first = element;
+	return (stack);
+}
+
+t_stack				*init_b()
+{
+	t_stack		*stack;
+
+	if (!(stack = (t_stack*)malloc(sizeof(t_stack))))
+		exit(EXIT_FAILURE);
+	stack->first = NULL;
 	return (stack);
 }

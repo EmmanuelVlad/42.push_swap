@@ -6,11 +6,22 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 14:54:56 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 17:35:23 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 18:04:30 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		check_if_exists(t_element *element, int value)
+{
+	while (element->next)
+	{
+		if (element->value == value)
+			return (0);
+		element = element->next;
+	}
+	return (1);
+}
 
 void	freestack(t_stack *stack)
 {
@@ -28,7 +39,7 @@ void	freestack(t_stack *stack)
 	free(stack);
 }
 
-void	freexit(t_stack *stack, char *str)
+void	freexit(t_stack *stack, char *str, int first)
 {
 	size_t	i;
 
@@ -44,7 +55,8 @@ void	freexit(t_stack *stack, char *str)
 		}
 		i++;
 	}
-	if (ft_atoi(str) > 2147483647 || ft_atoi(str) < -2147483648)
+	if ((ft_atoi(str) > 2147483647 || ft_atoi(str) < -2147483648) ||
+			(!first && !check_if_exists(stack->first, ft_atoi(str))))
 	{
 		freestack(stack);
 		printexit("Error\n");
