@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stock.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:10:07 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 17:15:21 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/13 15:36:17 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/13 16:43:34 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		push_swap(int ac, char **av)
+void		add_elem(t_stack *stack, int value)
 {
-	t_stack		*stack;
-	t_element	*tmp;
+	t_element *new;
 
-	stack = init(av[1]);
-	stock(stack, ac, av);
-	tmp = stack->first;
-	while (tmp->next)
-	{
-		ft_printf("%d\n", tmp->value);
-		tmp = tmp->next;
-	}
-	freestack(stack);
-	return (1);
+	new = init_element(value);
+	new->next = stack->first;
+	stack->first = new;
 }
 
-int		main(int ac, char **av)
+void		stock(t_stack *stack, int ac, char **av)
 {
-	if (ac > 1)
+	int	i;
+
+	i = ac - 1;
+	while (i > 0)
 	{
-		if (!push_swap(ac, av))
-			ft_printf("Error\n");
+		freexit(stack, av[i]);
+		add_elem(stack, ft_atoi(av[i]));
+		i--;
 	}
-	return (1);
 }

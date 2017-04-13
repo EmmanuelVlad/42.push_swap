@@ -6,7 +6,7 @@
 #    By: evlad <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 16:48:29 by evlad             #+#    #+#              #
-#    Updated: 2017/04/12 18:16:21 by evlad            ###   ########.fr        #
+#    Updated: 2017/04/13 17:11:22 by evlad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,9 @@ PS_NAME = push_swap
 PS_SRC = push_swap_src
 
 PS_LIST = main.c \
+		  stock.c \
+		  freexit.c \
+		  init.c \
 
 PS_PATH = $(OBJ_PATH)$(PS_NAME)/
 
@@ -54,7 +57,7 @@ OK = "\033[1;32m[OK]\033[0m"
 $(PS_PATH)%.o: $(PS_FILES) ./$(PS_SRC)/$(PS_NAME).h
 	@mkdir -p $(OBJ_PATH)
 	@mkdir -p $(PS_PATH)
-	@gcc $(FLAGS) -c ./$(PS_SRC)/$(@F:%.o=%.c) -o $(PS_OBJ:%=$(OBJ_PATH)$(PS_NAME)/%)
+	@gcc $(FLAGS) -c ./$(PS_SRC)/$(@F:%.o=%.c) -o $(@F:%=$(OBJ_PATH)$(PS_NAME)/%)
 
 $(CHECKER_PATH)%.o: $(CHECKER_FILES) ./$(CHECKER_SRC)/$(CHECKER_NAME).h
 	@mkdir -p $(OBJ_PATH)
@@ -71,13 +74,13 @@ $(LIBFT):
 
 $(CHECKER_NAME): $(CHECKER)
 	@echo -n '-> Compiling CHECKER ..'
-	@gcc -o $(CHECKER_NAME) $(OBJ_PATH)$(CHECKER_NAME)/$(CHECKER_OBJ) $(LIBFT_INC)
+	@gcc -o $(CHECKER_NAME) $(CHECKER_OBJ:%=$(OBJ_PATH)$(CHECKER_NAME)/%) $(LIBFT_INC)
 	@echo -n '.		'
 	@echo $(OK)
 
 $(PS_NAME): $(PS)
 	@echo -n '-> Compiling PUSH_SWAP .'
-	@gcc -o $(PS_NAME) $(OBJ_PATH)$(PS_NAME)/$(PS_OBJ) $(LIBFT_INC)
+	@gcc -o $(PS_NAME) $(PS_OBJ:%=$(OBJ_PATH)$(PS_NAME)/%) $(LIBFT_INC)
 	@echo -n '.'
 	@echo -n '.		'
 	@echo $(OK)
@@ -97,3 +100,5 @@ fclean: clean
 	@echo $(OK)
 
 re: fclean all
+
+.PHONY: clean fclean re
