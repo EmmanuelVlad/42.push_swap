@@ -6,7 +6,7 @@
 #    By: evlad <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 16:48:29 by evlad             #+#    #+#              #
-#    Updated: 2017/04/13 19:37:27 by evlad            ###   ########.fr        #
+#    Updated: 2017/04/13 22:35:27 by evlad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ PS_LIST = main.c \
 		  freexit.c \
 		  init.c \
 		  operations.c \
+		  operations_2.c \
+		  operations_3.c \
 
 PS_PATH = $(OBJ_PATH)$(PS_NAME)/
 

@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:17:13 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 20:10:11 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 22:36:20 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct			s_element
 typedef struct			s_stack
 {
 	struct s_element	*first;
-}					t_stack;
+}						t_stack;
 
 /*
 ** --------------------------------------------------------------------------
@@ -42,5 +42,11 @@ void					sb(t_stack *b);
 void					ss(t_stack *a, t_stack *b);
 void					pa(t_stack *a, t_stack *b);
 void					pb(t_stack *a, t_stack *b);
+void					ra(t_stack *a);
+void					rb(t_stack *b);
+void					rr(t_stack *a, t_stack *b);
+void					rra(t_stack *a);
+void					rrb(t_stack *b);
+void					rrr(t_stack *a, t_stack *b);
 
 #endif

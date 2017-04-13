@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 14:47:35 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 20:04:41 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/13 22:36:53 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack				*init_a(char *str)
 	return (stack);
 }
 
-t_stack				*init_b()
+t_stack				*init_b(void)
 {
 	t_stack		*stack;
 
