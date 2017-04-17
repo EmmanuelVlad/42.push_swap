@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:10:07 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 22:35:45 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/17 16:02:13 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,10 @@ int		push_swap(int ac, char **av)
 	a = init_a(av[ac - 1]);
 	b = init_b();
 	stock(a, ac, av);
-	// OPERATIONS
-	pb(a, b);
-	pb(a, b);
-	pb(a, b);
-	rrr(a, b);
-	rrr(a, b);
-
+	ft_printf("{%d}", parse_max_min(a, 10));
 	tmp_a = a->first;
 	tmp_b = b->first;
-	ft_printf("Stack A:\n");
+	ft_printf("\nStack A:\n");
 	while (tmp_a)
 	{
 		ft_printf("%d\n", tmp_a->value);
