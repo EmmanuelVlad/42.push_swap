@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 14:47:35 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 22:36:53 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/20 15:46:14 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_element			*init_element(int value)
 	return (element);
 }
 
-t_stack				*init_a(char *str)
+t_stack				*init_a(char *str, t_malloc *mal)
 {
 	t_stack		*stack;
 	t_element	*element;
@@ -32,7 +32,8 @@ t_stack				*init_a(char *str)
 		exit(EXIT_FAILURE);
 	if (!(stack = (t_stack*)malloc(sizeof(t_stack))))
 		exit(EXIT_FAILURE);
-	freexit(stack, str, 1);
+	stack->first = NULL;
+	freexit(stack, str, 1, mal);
 	element->value = ft_atoi(str);
 	element->next = NULL;
 	stack->first = element;
@@ -47,4 +48,14 @@ t_stack				*init_b(void)
 		exit(EXIT_FAILURE);
 	stack->first = NULL;
 	return (stack);
+}
+
+t_malloc			*init_malloc(void)
+{
+	t_malloc	*mal;
+
+	if (!(mal = (t_malloc*)malloc(sizeof(t_malloc))))
+		exit(EXIT_FAILURE);
+	mal->av = NULL;
+	return (mal);
 }

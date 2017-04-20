@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:31:07 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 17:31:07 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/20 13:04:38 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include "./printf.h"
+# include "./get_next_line.h"
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -40,6 +41,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t len);
 intmax_t			ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
+int					ft_strisdigit(char *str);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);

@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:11:55 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/13 21:21:08 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/18 15:20:28 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	sa(t_stack *a)
 		a->first = a->first->next;
 		a->first->next = tmp;
 		a->first->next->next = tmp2;
+		ft_putstr("sa\n");
 	}
 }
 
@@ -43,6 +44,7 @@ void	sb(t_stack *b)
 		b->first = b->first->next;
 		b->first->next = tmp;
 		b->first->next->next = tmp2;
+		ft_putstr("sb\n");
 	}
 }
 
@@ -63,6 +65,7 @@ void	pa(t_stack *a, t_stack *b)
 		b->first = b->first->next;
 		tmp->next = a->first;
 		a->first = tmp;
+		ft_putstr("pa\n");
 	}
 }
 
@@ -77,5 +80,6 @@ void	pb(t_stack *a, t_stack *b)
 		a->first = a->first->next;
 		tmp->next = b->first;
 		b->first = tmp;
+		ft_putstr("pb\n");
 	}
 }

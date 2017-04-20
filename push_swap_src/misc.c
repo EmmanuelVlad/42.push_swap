@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   misc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:08:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/18 16:06:00 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/18 14:38:04 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/20 15:15:47 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-int		main(void)
+int		check_stack(t_stack *stack)
 {
-	char	*line;
-	int		i;
+	t_element	*tmp;
+	int			value;
 
-	i = 0;
-	while (get_next_line(0, &line))
+	tmp = stack->first;
+	value = tmp->value;
+	tmp = tmp->next;
+	while (tmp)
 	{
-		i++;
-		free(line);
+		if (value > tmp->value)
+			return (0);
+		value = tmp->value;
+		tmp = tmp->next;
 	}
-	ft_printf("Total: %d\n", i);
 	return (1);
 }

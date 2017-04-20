@@ -6,7 +6,7 @@
 #    By: evlad <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 16:35:16 by evlad             #+#    #+#              #
-#    Updated: 2017/04/12 17:03:24 by evlad            ###   ########.fr        #
+#    Updated: 2017/04/20 13:04:49 by evlad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ LIST = ft_memset.c \
 	   ft_atoi.c \
 	   ft_isalpha.c \
 	   ft_isdigit.c \
+	   ft_strisdigit.c \
 	   ft_isalnum.c \
 	   ft_isascii.c \
 	   ft_isprint.c \
@@ -87,6 +88,7 @@ LIST = ft_memset.c \
 	   cast.c \
 	   freemalloc.c \
 	   strsubwchar.c \
+	   get_next_line.c \
 
 OBJ = $(LIST:%.c=%.o)
 
@@ -100,7 +102,7 @@ FLAGS = -Wextra -Werror -Wall
 
 NAME = libft.a
 
-$(OBJ_PATH)%.o: $(LIST) ./printf.h ./libft.h
+$(OBJ_PATH)%.o: $(LIST) ./printf.h ./libft.h ./get_next_line.h
 	@mkdir -p $(OBJ_PATH)
 	@mkdir -p $(LIBFT_PATH)
 	@gcc $(FLAGS) -c $(@F:%.o=%.c) -o $@

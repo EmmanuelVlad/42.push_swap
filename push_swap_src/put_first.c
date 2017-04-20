@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_first.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:08:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/18 16:06:00 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/18 13:53:22 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/18 14:22:35 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-int		main(void)
+void	put_first(t_stack *stack, int value)
 {
-	char	*line;
-	int		i;
+	int			pos;
 
-	i = 0;
-	while (get_next_line(0, &line))
+	pos = parse_pos(stack, value);
+	if (pos > stack_size(stack) / 2 + stack_size(stack) % 2)
 	{
-		i++;
-		free(line);
+		while (stack->first->value != value)
+			rra(stack);
 	}
-	ft_printf("Total: %d\n", i);
-	return (1);
+	else
+	{
+		while (stack->first->value != value)
+			ra(stack);
+	}
 }

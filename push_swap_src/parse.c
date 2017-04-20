@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 14:49:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/17 15:57:25 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/18 14:00:40 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,34 @@ int		parse_max_min(t_stack *stack, int percent)
 		i++;
 	}
 	return (max_min);
+}
+
+int		parse_pos(t_stack *stack, int num)
+{
+	t_element	*tmp;
+	int			pos;
+
+	tmp = stack->first;
+	pos = 1;
+	while (tmp && tmp->value != num)
+	{
+		tmp = tmp->next;
+		pos++;
+	}
+	return (pos);
+}
+
+int		stack_size(t_stack *stack)
+{
+	t_element	*tmp;
+	int			i;
+
+	tmp = stack->first;
+	i = 0;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:08:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/18 16:06:00 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/20 13:03:29 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/20 14:30:28 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
-int		main(void)
+int		ft_strisdigit(char *str)
 {
-	char	*line;
 	int		i;
 
 	i = 0;
-	while (get_next_line(0, &line))
+	while (str[i])
 	{
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
-		free(line);
 	}
-	ft_printf("Total: %d\n", i);
 	return (1);
 }
