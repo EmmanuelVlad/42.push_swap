@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 13:24:32 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 16:12:20 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 19:20:40 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,13 @@ void	sort_3(t_stack *stack)
 
 void	sort_30(t_stack *a, t_stack *b)
 {
-	int		i;
-
-	i = 0;
 	while (stack_size(a) > 3)
 	{
 		put_first_a(a, parse_min(a));
 		pb(a, b);
 	}
 	sort_3(a);
-	while (stack_size(b) && i++ < 27)
+	while (stack_size(b))
 		pa(a, b);
 }
 
@@ -77,6 +74,8 @@ int		sort_plus_2(t_stack *a, t_stack *b)
 {
 	if (check_stack(a))
 	{
+		print_stack(a, 'A');
+		print_stack(b, 'B');
 		while (stack_size(b))
 		{
 			put_first_b(b, parse_max(b));
@@ -94,18 +93,14 @@ void	sort_plus(t_stack *a, t_stack *b)
 	percent = (stack_size(a) / 10) + (((stack_size(a) / 10) % 10) / 2);
 	if (stack_size(a) > 200)
 		percent /= 2;
-	while (stack_size(a) > 30)
+	while (stack_size(a))
 	{
-		if (sort_plus_2(a, b))
-			return ;
 		put_first_a(a, closest(a, parse_max_min(a, percent)));
-		if (sort_plus_2(a, b))
-			return ;
 		pb(a, b);
-		if (sort_plus_2(a, b))
-			return ;
 	}
-	sort_30(a, b);
-	if (sort_plus_2(a, b))
-		return ;
+	while (stack_size(b))
+	{
+		put_first_b(b, parse_max(b));
+		pa(a, b);
+	}
 }

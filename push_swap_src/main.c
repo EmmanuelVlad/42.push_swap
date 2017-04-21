@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:10:07 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 16:17:18 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 19:20:00 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	push_swap(int ac, char **av, t_malloc *malloc)
 	b = init_b();
 	stock(a, ac, av, malloc);
 	sort(a, b, stack_size(a));
+//	print_stack(a, 'A');
 	free_malloc(malloc);
 	freestack(a);
 	freestack(b);
