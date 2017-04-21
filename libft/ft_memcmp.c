@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:26:04 by evlad             #+#    #+#             */
-/*   Updated: 2016/11/08 11:21:04 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 12:26:59 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int				i;
 	unsigned char	cs1;
 	unsigned char	cs2;
 
-	i = 0;
 	while (n != 0)
 	{
 		cs1 = *(unsigned char*)s1;

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 14:38:04 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 17:27:18 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/21 17:41:01 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/21 17:43:02 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int		check_if_exists(t_element *element, int value)
 {
@@ -21,18 +21,4 @@ int		check_if_exists(t_element *element, int value)
 		element = element->next;
 	}
 	return (1);
-}
-
-int		closest(t_stack *stack, int value)
-{
-	t_element	*tmp;
-
-	tmp = stack->first;
-	while (tmp)
-	{
-		if (tmp->value <= value)
-			break ;
-		tmp = tmp->next;
-	}
-	return (tmp->value);
 }

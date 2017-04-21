@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/06 18:27:44 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/12 14:53:47 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 12:27:31 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,6 @@ char	*apply_diese_2(char *buffer, t_flag *active)
 
 char	*apply_diese(char *buffer, t_flag *active)
 {
-	int		i;
-
-	i = 0;
 	if (ft_strchr("csdiupUCDS%", active->type) || ft_atoi(buffer) == 0)
 		return (buffer);
 	else if (active->type == 'o' && !active->hh)

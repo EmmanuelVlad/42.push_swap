@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc.c                                             :+:      :+:    :+:   */
+/*   stock.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 14:38:04 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 17:27:18 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/13 15:36:17 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/21 17:39:25 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int		check_if_exists(t_element *element, int value)
+void		add_elem(t_stack *stack, int value)
 {
-	while (element)
-	{
-		if (element->value == value)
-			return (0);
-		element = element->next;
-	}
-	return (1);
+	t_element	*new;
+
+	new = init_element(value);
+	new->next = stack->first;
+	stack->first = new;
 }
 
-int		closest(t_stack *stack, int value)
+void		stock(t_stack *stack, int ac, char **av, t_malloc *malloc)
 {
-	t_element	*tmp;
+	int	i;
 
-	tmp = stack->first;
-	while (tmp)
+	i = ac - 2;
+	while (i > 0)
 	{
-		if (tmp->value <= value)
-			break ;
-		tmp = tmp->next;
+		freexit(stack, av[i], 0, malloc);
+		add_elem(stack, ft_atoi(av[i]));
+		i--;
 	}
-	return (tmp->value);
 }

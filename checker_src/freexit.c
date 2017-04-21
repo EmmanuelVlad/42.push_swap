@@ -6,11 +6,11 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 14:54:56 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 17:27:08 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 17:38:49 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int		check_stack(t_stack *stack)
 {

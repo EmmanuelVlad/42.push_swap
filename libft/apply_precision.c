@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 14:13:17 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/12 15:12:40 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 12:27:43 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,9 @@ char	*apply_precision_negative(char *buffer, int length, t_flag *active)
 {
 	char	*str;
 	int		i;
-	int		j;
 
 	str = ft_strnew(active->precision + 2);
 	i = 0;
-	j = 0;
 	while (i < (active->precision - length + 2))
 		str[i++] = '0';
 	str[0] = '-';

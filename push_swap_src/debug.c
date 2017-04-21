@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc.c                                             :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 14:38:04 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 17:27:18 by evlad            ###   ########.fr       */
+/*   Created: 2017/04/21 15:38:07 by evlad             #+#    #+#             */
+/*   Updated: 2017/04/21 15:47:49 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "debug.h"
 
-int		check_if_exists(t_element *element, int value)
-{
-	while (element)
-	{
-		if (element->value == value)
-			return (0);
-		element = element->next;
-	}
-	return (1);
-}
-
-int		closest(t_stack *stack, int value)
+void	print_stack(t_stack *stack, char type)
 {
 	t_element	*tmp;
+	int			i;
 
 	tmp = stack->first;
+	i = 1;
+	ft_printf("\nStack %c:\n", type);
 	while (tmp)
 	{
-		if (tmp->value <= value)
-			break ;
+		ft_printf("%5d: %10d\n", i, tmp->value);
 		tmp = tmp->next;
+		i++;
 	}
-	return (tmp->value);
+	ft_printf("\n\n");
 }

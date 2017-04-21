@@ -6,7 +6,7 @@
 #    By: evlad <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 16:48:29 by evlad             #+#    #+#              #
-#    Updated: 2017/04/18 14:41:08 by evlad            ###   ########.fr        #
+#    Updated: 2017/04/21 18:07:51 by evlad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,14 @@ CHECKER_NAME = checker
 CHECKER_SRC = checker_src
 
 CHECKER_LIST = main.c \
+			   misc.c \
+			   stock.c \
+			   freexit.c \
+			   init.c \
+			   operations.c \
+			   operations_2.c \
+			   operations_3.c \
+			   debug.c \
 
 CHECKER_PATH = $(OBJ_PATH)$(CHECKER_NAME)/
 
@@ -31,16 +39,17 @@ PS_NAME = push_swap
 PS_SRC = push_swap_src
 
 PS_LIST = main.c \
-		  stock.c \
-		  freexit.c \
-		  init.c \
 		  sort.c \
 		  parse.c \
 		  put_first.c \
 		  misc.c \
+		  stock.c \
+		  freexit.c \
+		  init.c \
 		  operations.c \
 		  operations_2.c \
 		  operations_3.c \
+		  debug.c \
 
 PS_PATH = $(OBJ_PATH)$(PS_NAME)/
 
@@ -69,7 +78,7 @@ $(PS_PATH)%.o: $(PS_FILES) ./$(PS_SRC)/$(PS_NAME).h
 $(CHECKER_PATH)%.o: $(CHECKER_FILES) ./$(CHECKER_SRC)/$(CHECKER_NAME).h
 	@mkdir -p $(OBJ_PATH)
 	@mkdir -p $(CHECKER_PATH)
-	@gcc $(FLAGS) -c ./$(CHECKER_SRC)/$(@F:%.o=%.c) -o $(CHECKER_OBJ:%=$(OBJ_PATH)$(CHECKER_NAME)/%)
+	@gcc $(FLAGS) -c ./$(CHECKER_SRC)/$(@F:%.o=%.c) -o $(@F:%=$(OBJ_PATH)$(CHECKER_NAME)/%)
 
 all: $(LIBFT) $(CHECKER_NAME) $(PS_NAME)
 

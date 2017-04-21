@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 15:36:37 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 18:23:56 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 18:23:14 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ra(t_stack *a)
 	tmp->next = tmp2;
 	a->first = a->first->next;
 	tmp2->next = NULL;
-	ft_putstr("ra\n");
 }
 
 void	rb(t_stack *b)
@@ -43,7 +42,6 @@ void	rb(t_stack *b)
 	tmp->next = tmp2;
 	b->first = b->first->next;
 	tmp2->next = NULL;
-	ft_putstr("rb\n");
 }
 
 void	rr(t_stack *a, t_stack *b)
@@ -70,7 +68,6 @@ void	rra(t_stack *a)
 	tmp2->next = a->first;
 	tmp->next = NULL;
 	a->first = tmp2;
-	ft_putstr("rra\n");
 }
 
 void	rrb(t_stack *b)
@@ -91,5 +88,4 @@ void	rrb(t_stack *b)
 	tmp2->next = b->first;
 	tmp->next = NULL;
 	b->first = tmp2;
-	ft_putstr("rrb\n");
 }

@@ -6,23 +6,54 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:08:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/18 16:06:00 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/21 18:55:51 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int		main(void)
+void	checker(int ac, char **av, t_malloc *malloc)
 {
-	char	*line;
-	int		i;
+	t_stack		*a;
+	t_stack		*b;
+	char		*line;
 
-	i = 0;
+	a = init_a(av[ac - 1], malloc);
+	b = init_b();
+	stock(a, ac, av, malloc);
+	free_malloc(malloc);
 	while (get_next_line(0, &line))
 	{
-		i++;
+		make_op(line, a, b);
 		free(line);
 	}
-	ft_printf("Total: %d\n", i);
-	return (1);
+	free(line);
+	if (check_stack(a))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+	freestack(a);
+	freestack(b);
+}
+
+int		main(int ac, char **av)
+{
+	char		*str;
+	t_malloc	*malloc;
+
+	str = ft_strjoin("checker ", av[1]);
+	malloc = init_malloc();
+	if (ac > 1)
+	{
+		if (ac == 2)
+		{
+			ac = ft_countsword(av[1], ' ') + 1;
+			av = ft_strsplit(str, ' ');
+			malloc->av = av;
+			malloc->ac = ac;
+		}
+		free(str);
+		checker(ac, av, malloc);
+	}
+	return (0);
 }
