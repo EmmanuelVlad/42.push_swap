@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 13:24:32 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 19:20:40 by evlad            ###   ########.fr       */
+/*   Updated: 2017/04/28 17:41:27 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,6 @@ void	sort_30(t_stack *a, t_stack *b)
 	sort_3(a);
 	while (stack_size(b))
 		pa(a, b);
-}
-
-int		sort_plus_2(t_stack *a, t_stack *b)
-{
-	if (check_stack(a))
-	{
-		print_stack(a, 'A');
-		print_stack(b, 'B');
-		while (stack_size(b))
-		{
-			put_first_b(b, parse_max(b));
-			pa(a, b);
-		}
-		return (1);
-	}
-	return (0);
 }
 
 void	sort_plus(t_stack *a, t_stack *b)
