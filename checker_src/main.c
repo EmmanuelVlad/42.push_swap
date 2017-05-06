@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:08:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 18:55:51 by evlad            ###   ########.fr       */
+/*   Updated: 2017/05/06 11:12:33 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,16 @@ int		main(int ac, char **av)
 	char		*str;
 	t_malloc	*malloc;
 
-	str = ft_strjoin("checker ", av[1]);
+	if (!(str = ft_strjoin("checker ", av[1])))
+		exit(EXIT_FAILURE);
 	malloc = init_malloc();
 	if (ac > 1)
 	{
 		if (ac == 2)
 		{
 			ac = ft_countsword(av[1], ' ') + 1;
-			av = ft_strsplit(str, ' ');
+			if (!(av = ft_strsplit(str, ' ')))
+				exit(EXIT_FAILURE);
 			malloc->av = av;
 			malloc->ac = ac;
 		}
