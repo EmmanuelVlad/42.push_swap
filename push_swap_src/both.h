@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:25:07 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/24 14:52:43 by evlad            ###   ########.fr       */
+/*   Updated: 2017/05/16 10:30:35 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void					stock(t_stack *stack, int ac, char **av,
 t_element				*init_element(int value);
 t_stack					*init_a(char *str, t_malloc *malloc);
 t_stack					*init_b(void);
-t_malloc				*init_malloc(void);							
+t_malloc				*init_malloc(void);
 
 /*
 ** --------------------------------------------------------------------------
