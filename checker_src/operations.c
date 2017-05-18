@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:11:55 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 18:05:43 by evlad            ###   ########.fr       */
+/*   Updated: 2017/05/18 14:52:44 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sa(t_stack *a)
 
 	tmp = NULL;
 	tmp2 = NULL;
-	if (a->first->next)
+	if (a->first && a->first->next)
 	{
 		tmp = a->first;
 		tmp2 = a->first->next->next;
@@ -36,7 +36,7 @@ void	sb(t_stack *b)
 
 	tmp = NULL;
 	tmp2 = NULL;
-	if (b->first->next)
+	if (b->first && b->first->next)
 	{
 		tmp = b->first;
 		tmp2 = b->first->next->next;
