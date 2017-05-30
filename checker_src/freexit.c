@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 14:54:56 by evlad             #+#    #+#             */
-/*   Updated: 2017/05/30 11:52:21 by evlad            ###   ########.fr       */
+/*   Updated: 2017/05/30 12:50:56 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ void	free_malloc(t_malloc *malloc)
 		return ;
 	if (malloc->av)
 	{
-		while (malloc->av[i])
+		while (i < malloc->ac)
 			free(malloc->av[i++]);
+		free(malloc->av);
 	}
-	free(malloc->av);
 	free(malloc);
 }
 
