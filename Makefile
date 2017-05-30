@@ -6,7 +6,7 @@
 #    By: evlad <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 16:48:29 by evlad             #+#    #+#              #
-#    Updated: 2017/04/21 18:07:51 by evlad            ###   ########.fr        #
+#    Updated: 2017/05/30 12:40:36 by evlad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ CHECKER_LIST = main.c \
 			   operations.c \
 			   operations_2.c \
 			   operations_3.c \
-			   debug.c \
 
 CHECKER_PATH = $(OBJ_PATH)$(CHECKER_NAME)/
 
@@ -49,7 +48,6 @@ PS_LIST = main.c \
 		  operations.c \
 		  operations_2.c \
 		  operations_3.c \
-		  debug.c \
 
 PS_PATH = $(OBJ_PATH)$(PS_NAME)/
 
