@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 15:36:17 by evlad             #+#    #+#             */
-/*   Updated: 2017/04/21 17:39:25 by evlad            ###   ########.fr       */
+/*   Updated: 2017/05/30 12:00:20 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void		add_elem(t_stack *stack, int value)
 {
 	t_element	*new;
 
-	new = init_element(value);
+	if (!(new = init_element(value)))
+		exit(EXIT_FAILURE);
 	new->next = stack->first;
 	stack->first = new;
 }
