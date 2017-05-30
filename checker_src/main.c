@@ -6,7 +6,7 @@
 /*   By: evlad <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:08:31 by evlad             #+#    #+#             */
-/*   Updated: 2017/05/06 11:12:33 by evlad            ###   ########.fr       */
+/*   Updated: 2017/05/30 11:35:25 by evlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	checker(int ac, char **av, t_malloc *malloc)
 		free(line);
 	}
 	free(line);
-	if (check_stack(a))
+	if (check_stack(a) && !b->first)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
